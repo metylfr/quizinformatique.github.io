@@ -73,7 +73,7 @@
         let quizData = [];
         let score = 0;
 
-        fetch('quiz-wso2-integrator.json')
+        fetch('quiz.json')
             .then(response => response.json())
             .then(data => {
                 quizData = data.questions;
