@@ -3,32 +3,102 @@
     {
       "question": "Qu'est-ce qu'un processeur?",
       "options": ["Un périphérique de stockage", "Un composant de mémoire", "Une unité centrale de traitement", "Une carte graphique"],
-      "answer": "Une unité centrale de traitement",
-      "comment": "Le processeur (CPU) est le cerveau de l'ordinateur, où toutes les instructions sont traitées."
+      "answer": "Une unité centrale de traitement"
     },
     {
       "question": "Quelle est la principale fonction de la RAM?",
       "options": ["Stockage à long terme", "Exécution des programmes", "Traitement des données", "Gestion de la consommation d'énergie"],
-      "answer": "Exécution des programmes",
-      "comment": "La RAM permet à un ordinateur de stocker temporairement des données pendant l'exécution des programmes, facilitant ainsi leur traitement."
+      "answer": "Exécution des programmes"
     },
     {
       "question": "Que signifie le terme 'bus' dans un ordinateur?",
       "options": ["Un système de transport", "Un circuit de communication", "Une mémoire temporaire", "Un processeur de secours"],
-      "answer": "Un circuit de communication",
-      "comment": "Dans un ordinateur, un 'bus' est un circuit qui permet le transfert de données entre différents composants."
+      "answer": "Un circuit de communication"
     },
     {
       "question": "Qu'est-ce qu'un disque dur SSD?",
       "options": ["Un disque dur mécanique", "Un disque dur à état solide", "Un type de RAM", "Un processeur graphique"],
-      "answer": "Un disque dur à état solide",
-      "comment": "Le SSD est un dispositif de stockage plus rapide que le disque dur traditionnel, car il n'a pas de pièces mécaniques en mouvement."
+      "answer": "Un disque dur à état solide"
     },
     {
       "question": "Que fait une carte mère?",
       "options": ["Gère les graphismes", "Connecte tous les composants d'un ordinateur", "Augmente la vitesse du processeur", "Stocke les fichiers de l'utilisateur"],
-      "answer": "Connecte tous les composants d'un ordinateur",
-      "comment": "La carte mère est le circuit principal qui connecte tous les composants d'un ordinateur et permet leur communication."
+      "answer": "Connecte tous les composants d'un ordinateur"
+    },
+    {
+      "question": "Qu'est-ce qu'une unité d'alimentation?",
+      "options": ["Un composant de stockage", "Un dispositif de refroidissement", "Un circuit qui distribue l'énergie électrique", "Un port pour connecter des périphériques"],
+      "answer": "Un circuit qui distribue l'énergie électrique"
+    },
+    {
+      "question": "Que signifie CPU?",
+      "options": ["Central Processing Unit", "Computer Power Unit", "Control Program Unit", "Core Processing Utility"],
+      "answer": "Central Processing Unit"
+    },
+    {
+      "question": "Quelle est la fonction d'un cache?",
+      "options": ["Stocker des fichiers", "Améliorer la vitesse d'accès aux données", "Augmenter la RAM", "Réguler la température du processeur"],
+      "answer": "Améliorer la vitesse d'accès aux données"
+    },
+    {
+      "question": "Que fait une carte graphique?",
+      "options": ["Augmente la puissance du processeur", "Rend les graphiques à l'écran", "Contrôle les périphériques", "Stocke des fichiers"],
+      "answer": "Rend les graphiques à l'écran"
+    },
+    {
+      "question": "Qu'est-ce qu'un réseau local (LAN)?",
+      "options": ["Un type de disque dur", "Un réseau de communication à grande échelle", "Un réseau d'ordinateurs dans une zone limitée", "Un type de RAM"],
+      "answer": "Un réseau d'ordinateurs dans une zone limitée"
+    },
+    {
+      "question": "Que signifie BIOS?",
+      "options": ["Basic Input Output System", "Binary Input Output System", "Base Interactive Operating System", "Basic Internal Operating Structure"],
+      "answer": "Basic Input Output System"
+    },
+    {
+      "question": "Quelle est la principale fonction d'un ventilateur dans un ordinateur?",
+      "options": ["Réguler l'énergie", "Refroidir les composants", "Stocker les données", "Gérer les périphériques"],
+      "answer": "Refroidir les composants"
+    },
+    {
+      "question": "Que fait un port USB?",
+      "options": ["Stocke des fichiers", "Connecte des périphériques externes", "Alimente la carte mère", "Exécute des programmes"],
+      "answer": "Connecte des périphériques externes"
+    },
+    {
+      "question": "Quelle est la fonction d'un disque dur dans un ordinateur?",
+      "options": ["Exécuter des programmes", "Stocker des données à long terme", "Accélérer le traitement", "Refroidir le processeur"],
+      "answer": "Stocker des données à long terme"
+    },
+    {
+      "question": "Que signifie RAID dans le contexte des systèmes de stockage?",
+      "options": ["Random Access Input Device", "Redundant Array of Independent Disks", "Remote Access Integration Device", "Rapid Application of Internal Data"],
+      "answer": "Redundant Array of Independent Disks"
+    },
+    {
+      "question": "Qu'est-ce qu'un périphérique d'entrée?",
+      "options": ["Un dispositif qui envoie des données à l'ordinateur", "Un composant de stockage", "Un appareil qui reçoit des données de l'ordinateur", "Un circuit de refroidissement"],
+      "answer": "Un dispositif qui envoie des données à l'ordinateur"
+    },
+    {
+      "question": "Que signifie GPU?",
+      "options": ["Graphical Processing Unit", "General Processing Unit", "Graphic Programming Unit", "Global Processor Utility"],
+      "answer": "Graphical Processing Unit"
+    },
+    {
+      "question": "Quel est le rôle d'une unité de contrôle dans un processeur?",
+      "options": ["Gérer la mémoire", "Exécuter des programmes", "Diriger les opérations du processeur", "Réguler la température"],
+      "answer": "Diriger les opérations du processeur"
+    },
+    {
+      "question": "Que fait une unité arithmétique et logique (ALU)?",
+      "options": ["Exécute des calculs mathématiques et des décisions logiques", "Gère la mémoire", "Stocke des données à long terme", "Refroidit le processeur"],
+      "answer": "Exécute des calculs mathématiques et des décisions logiques"
+    },
+    {
+      "question": "Quelle est la fonction de la mémoire ROM?",
+      "options": ["Stocker les données temporairement", "Conserver les données même sans alimentation", "Exécuter des programmes", "Augmenter la vitesse du processeur"],
+      "answer": "Conserver les données même sans alimentation"
     }
   ]
 }
