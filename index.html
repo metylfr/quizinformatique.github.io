@@ -64,7 +64,7 @@
         let currentQuestionIndex = 0;
         let quizData = [];
 
-        fetch('quiz.json')
+        fetch('quiz-wso2-integrator.json')
             .then(response => response.json())
             .then(data => {
                 quizData = data.questions;
@@ -101,12 +101,24 @@
                     feedbackElement.innerText = "Bonne réponse!";
                     feedbackElement.classList.add('correct');
                     feedbackElement.classList.remove('incorrect');
+                    commentElement.innerText = '';
                 } else {
                     feedbackElement.innerText = "Mauvaise réponse!";
                     feedbackElement.classList.add('incorrect');
                     feedbackElement.classList.remove('correct');
                     commentElement.innerHTML = `<span style="color:green">Bonne réponse : ${correctAnswer}</span><br>${comment}`;
                 }
+
+                // Passer à la question suivante après un délai
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < quizData.length) {
+                        displayQuestion();
+                    } else {
+                        document.getElementById('quiz').innerHTML = '<div class="question">Quiz terminé !</div>';
+                        document.querySelector('.btn').style.display = 'none';
+                    }
+                }, 2000); // Attendre 2 secondes avant de passer à la question suivante
             } else {
                 feedbackElement.innerText = "Veuillez choisir une option.";
                 feedbackElement.classList.remove('correct', 'incorrect');
