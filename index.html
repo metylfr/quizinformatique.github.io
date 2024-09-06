@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz sur l'Architecture Informatique</title>
+    <title>Quiz WSO2 Integrator - Mode Learning</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,17 +27,27 @@
         .btn {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
         }
         .btn:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
-        .result {
-            margin-top: 20px;
-            font-size: 20px;
+        .feedback {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+        .comment {
+            font-size: 14px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -45,16 +55,16 @@
 
     <div class="quiz-container">
         <div id="quiz"></div>
-        <button class="btn" onclick="checkAnswers()">Soumettre</button>
-        <div class="result" id="result"></div>
+        <button class="btn" onclick="checkAnswer()">Soumettre</button>
+        <div id="feedback" class="feedback"></div>
+        <div id="comment" class="comment"></div>
     </div>
 
     <script>
         let currentQuestionIndex = 0;
-        let score = 0;
         let quizData = [];
 
-        fetch('quiz.json')
+        fetch('quiz-wso2-integrator.json')
             .then(response => response.json())
             .then(data => {
                 quizData = data.questions;
@@ -73,18 +83,33 @@
                     </div>
                 `).join('')}
             `;
+            document.getElementById('feedback').innerText = '';
+            document.getElementById('comment').innerText = '';
         }
 
-        function checkAnswers() {
+        function checkAnswer() {
             const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
-            if (selectedOption && selectedOption.value === quizData[currentQuestionIndex].answer) {
-                score++;
-            }
-            currentQuestionIndex++;
-            if (currentQuestionIndex < quizData.length) {
-                displayQuestion();
+            const feedbackElement = document.getElementById('feedback');
+            const commentElement = document.getElementById('comment');
+
+            if (selectedOption) {
+                const selectedAnswer = selectedOption.value;
+                const correctAnswer = quizData[currentQuestionIndex].answer;
+                const comment = quizData[currentQuestionIndex].comment;
+
+                if (selectedAnswer === correctAnswer) {
+                    feedbackElement.innerText = "Bonne réponse!";
+                    feedbackElement.classList.add('correct');
+                    feedbackElement.classList.remove('incorrect');
+                } else {
+                    feedbackElement.innerText = "Mauvaise réponse!";
+                    feedbackElement.classList.add('incorrect');
+                    feedbackElement.classList.remove('correct');
+                    commentElement.innerHTML = `<span style="color:green">Bonne réponse : ${correctAnswer}</span><br>${comment}`;
+                }
             } else {
-                document.getElementById('result').innerText = `Votre score est de ${score} sur ${quizData.length}.`;
+                feedbackElement.innerText = "Veuillez choisir une option.";
+                feedbackElement.classList.remove('correct', 'incorrect');
             }
         }
     </script>
