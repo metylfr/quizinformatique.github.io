@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sur l'Architecture Informatique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .option {
+            margin: 5px 0;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <div id="quiz"></div>
+        <button class="btn" onclick="checkAnswers()">Soumettre</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let quizData = [];
+
+        fetch('quiz.json')
+            .then(response => response.json())
+            .then(data => {
+                quizData = data.questions;
+                displayQuestion();
+            });
+
+        function displayQuestion() {
+            const quizElement = document.getElementById('quiz');
+            const question = quizData[currentQuestionIndex];
+            quizElement.innerHTML = `
+                <div class="question">${question.question}</div>
+                ${question.options.map((option, index) => `
+                    <div class="option">
+                        <input type="radio" name="question${currentQuestionIndex}" id="option${index}" value="${option}">
+                        <label for="option${index}">${option}</label>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        function checkAnswers() {
+            const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+            if (selectedOption && selectedOption.value === quizData[currentQuestionIndex].answer) {
+                score++;
+            }
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                displayQuestion();
+            } else {
+                document.getElementById('result').innerText = `Votre score est de ${score} sur ${quizData.length}.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
