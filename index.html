@@ -49,6 +49,12 @@
             font-size: 14px;
             margin-top: 10px;
         }
+        #next-button {
+            display: none;
+        }
+        #result {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -56,15 +62,18 @@
     <div class="quiz-container">
         <div id="quiz"></div>
         <button class="btn" onclick="checkAnswer()">Soumettre</button>
+        <button class="btn" id="next-button" onclick="nextQuestion()">Suivant</button>
         <div id="feedback" class="feedback"></div>
         <div id="comment" class="comment"></div>
+        <div id="result"></div>
     </div>
 
     <script>
         let currentQuestionIndex = 0;
         let quizData = [];
+        let score = 0;
 
-        fetch('quiz.json')
+        fetch('quiz-wso2-integrator.json')
             .then(response => response.json())
             .then(data => {
                 quizData = data.questions;
@@ -85,6 +94,7 @@
             `;
             document.getElementById('feedback').innerText = '';
             document.getElementById('comment').innerText = '';
+            document.getElementById('next-button').style.display = 'none';
         }
 
         function checkAnswer() {
@@ -101,6 +111,7 @@
                     feedbackElement.innerText = "Bonne réponse!";
                     feedbackElement.classList.add('correct');
                     feedbackElement.classList.remove('incorrect');
+                    score++;
                     commentElement.innerText = '';
                 } else {
                     feedbackElement.innerText = "Mauvaise réponse!";
@@ -109,20 +120,35 @@
                     commentElement.innerHTML = `<span style="color:green">Bonne réponse : ${correctAnswer}</span><br>${comment}`;
                 }
 
-                // Passer à la question suivante après un délai
-                setTimeout(() => {
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex < quizData.length) {
-                        displayQuestion();
-                    } else {
-                        document.getElementById('quiz').innerHTML = '<div class="question">Quiz terminé !</div>';
-                        document.querySelector('.btn').style.display = 'none';
-                    }
-                }, 2000); // Attendre 2 secondes avant de passer à la question suivante
+                document.getElementById('next-button').style.display = 'block';
+                document.querySelector('.btn').style.display = 'none'; // Hide the submit button
             } else {
                 feedbackElement.innerText = "Veuillez choisir une option.";
                 feedbackElement.classList.remove('correct', 'incorrect');
             }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                displayQuestion();
+                document.querySelector('.btn').style.display = 'block'; // Show the submit button
+            } else {
+                displayResult();
+            }
+        }
+
+        function displayResult() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('next-button').style.display = 'none';
+            document.getElementById('feedback').style.display = 'none';
+            document.getElementById('comment').style.display = 'none';
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `
+                <div class="question">Quiz terminé !</div>
+                <div class="feedback">Votre score est ${score} sur ${quizData.length}.</div>
+            `;
+            resultElement.style.display = 'block';
         }
     </script>
 
