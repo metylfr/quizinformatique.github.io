@@ -1,4 +1,5 @@
 {
+"questions": {
   "STAGE I : Architecture": [
     {
       "question": "What is the primary function of the WSO2 API Gateway in the API Manager architecture?",
@@ -2085,4 +2086,5 @@
       "comment": "Versioning helps ensure that custom extensions remain compatible with specific versions of the API Manager, facilitating easier upgrades."
     }
   ]
+}
 }
