@@ -1,5 +1,5 @@
 {
-  "questions": [
+  "STAGE I : Architecture": [
     {
       "question": "What is the primary function of the WSO2 API Gateway in the API Manager architecture?",
       "options": [
@@ -219,8 +219,10 @@
       ],
       "answer": "It allows API consumers to discover, subscribe, and test APIs",
       "comment": "The API Store enables API consumers to browse and subscribe to available APIs, facilitating easy discovery and testing."
-    },
-	{
+    }
+  ],
+  "STAGE II :Working with APIs": [
+    {
       "question": "What is the first step in creating an API in WSO2 API Manager?",
       "options": [
         "Publishing the API",
@@ -439,7 +441,10 @@
       ],
       "answer": "Subscribe to APIs and monitor usage",
       "comment": "API consumers use the API Store to subscribe to available APIs and monitor their usage based on subscription plans."
-    },   {
+    }
+  ],
+  "STAGE III :Product Administration and DevOps": [
+    {
       "question": "Which component is responsible for handling API traffic in WSO2 API Manager?",
       "options": [
         "API Store",
@@ -658,7 +663,9 @@
       ],
       "answer": "To automate the deployment of APIs and configurations",
       "comment": "CI/CD pipelines enable the automatic deployment and testing of APIs, leading to faster development cycles and more reliable deployments."
-    },
+    }
+  ],
+  "STAGE IV :Security": [
     {
       "question": "Which of the following security standards is used by WSO2 API Manager to issue access tokens for API security?",
       "options": [
@@ -878,7 +885,8 @@
       ],
       "answer": "All of the above",
       "comment": "WSO2 API Manager offers multiple methods for ensuring that only authorized users can access APIs, including token introspection, API key validation, and role-based access control."
-    },
+    }
+  ], "STAGE V :Rate Limiting": [
     {
       "question": "What is the primary purpose of rate limiting in WSO2 API Manager?",
       "options": [
@@ -1076,7 +1084,8 @@
       ],
       "answer": "By defining separate throttling policies for each version",
       "comment": "Defining separate throttling policies for each API version allows for tailored rate limits that can change based on the version's stability or usage."
-    },
+    }
+  ],"STAGE VI :API Runtime": [
     {
       "question": "What is the main purpose of the API runtime in WSO2 API Manager?",
       "options": [
@@ -1274,7 +1283,9 @@
       ],
       "answer": "All of the above",
       "comment": "The Developer Portal serves as a comprehensive platform for publishing, documenting, and managing API subscriptions."
-    },
+    }
+  ],
+  "STAGE VII :Key Management": [
     {
       "question": "What is the primary purpose of the Key Manager in WSO2 API Manager?",
       "options": [
@@ -1472,7 +1483,9 @@
       ],
       "answer": "It specifies the type of token being issued (e.g., Bearer)",
       "comment": "The 'token type' parameter indicates the type of token being issued, which informs clients how to use it in requests."
-    },
+    }
+  ],
+  "STAGE VIII :Tuning, Performance, and Debugging": [
     {
       "question": "What is the purpose of performance tuning in WSO2 API Manager?",
       "options": [
@@ -1670,7 +1683,9 @@
       ],
       "answer": "By configuring alerts and dashboards",
       "comment": "Setting up alerts and dashboards allows for real-time monitoring of service health and performance."
-    },
+    }
+  ],
+  "STAGE IX :Deployment": [
     {
       "question": "What is the primary purpose of deploying WSO2 API Manager?",
       "options": [
@@ -1868,7 +1883,9 @@
       ],
       "answer": "Using CI/CD pipelines",
       "comment": "CI/CD pipelines automate the deployment process, making it easier to manage updates and rollbacks effectively."
-    },
+    }
+  ],
+  "STAGE X :Extensions": [
     {
       "question": "What is the purpose of extensions in WSO2 API Manager?",
       "options": [
@@ -2066,485 +2083,6 @@
       ],
       "answer": "To manage compatibility with API versions",
       "comment": "Versioning helps ensure that custom extensions remain compatible with specific versions of the API Manager, facilitating easier upgrades."
-    },
-	{
-        "question": "What is the primary function of the WSO2 API Gateway in the API Manager architecture?",
-        "options": [
-          "Managing user authentication",
-          "Handling API traffic and enforcing policies",
-          "Storing API data",
-          "Handling API analytics"
-        ],
-        "answer": "Handling API traffic and enforcing policies",
-        "comment": "The API Gateway is responsible for processing API requests, applying security policies, rate limiting, and routing requests."
-      },
-      {
-        "question": "Which component in WSO2 API Manager handles API lifecycle management?",
-        "options": [
-          "API Publisher",
-          "API Gateway",
-          "API Store",
-          "Key Manager"
-        ],
-        "answer": "API Publisher",
-        "comment": "The API Publisher is used by API developers to manage the lifecycle of APIs, including creation, versioning, and deprecation."
-      },
-      {
-        "question": "Which of the following protocols are supported by WSO2 API Manager for securing APIs?",
-        "options": [
-          "OAuth2",
-          "OpenID Connect",
-          "Basic Authentication",
-          "All of the above"
-        ],
-        "answer": "All of the above",
-        "comment": "WSO2 API Manager supports OAuth2, OpenID Connect, and Basic Authentication for securing APIs."
-      },
-      {
-        "question": "What is the purpose of the Developer Portal in WSO2 API Manager?",
-        "options": [
-          "To manage API keys",
-          "To subscribe to and consume APIs",
-          "To monitor API performance",
-          "To handle API lifecycle management"
-        ],
-        "answer": "To subscribe to and consume APIs",
-        "comment": "The Developer Portal is where developers discover, subscribe to, and consume published APIs."
-      },
-      {
-        "question": "Which OAuth2 grant type is best suited for single-page applications (SPA)?",
-        "options": [
-          "Authorization Code",
-          "Implicit",
-          "Client Credentials",
-          "Resource Owner Password"
-        ],
-        "answer": "Implicit",
-        "comment": "The Implicit grant type is typically used for SPAs without backend components."
-      },
-      {
-        "question": "Which component is responsible for managing security tokens in WSO2 API Manager?",
-        "options": [
-          "API Gateway",
-          "Key Manager",
-          "API Publisher",
-          "Developer Portal"
-        ],
-        "answer": "Key Manager",
-        "comment": "The Key Manager manages security tokens like OAuth2 access tokens."
-      },
-      {
-        "question": "What is the primary purpose of rate limiting in WSO2 API Manager?",
-        "options": [
-          "To enhance API security",
-          "To ensure fair usage and protect against overuse",
-          "To improve API performance",
-          "To manage API documentation"
-        ],
-        "answer": "To ensure fair usage and protect against overuse",
-        "comment": "Rate limiting helps prevent system overload by limiting the number of requests allowed."
-      },
-      {
-        "question": "How can API developers monitor API performance in WSO2 API Manager?",
-        "options": [
-          "Through the API Gateway",
-          "Using the Publisher",
-          "Using the Developer Portal dashboard",
-          "Through the Key Manager"
-        ],
-        "answer": "Using the Developer Portal dashboard",
-        "comment": "API developers can access analytics and performance data through the Developer Portal."
-      },
-      {
-        "question": "Which tool is commonly used to deploy WSO2 API Manager in a containerized environment?",
-        "options": [
-          "Kubernetes",
-          "Ansible",
-          "Docker",
-          "Terraform"
-        ],
-        "answer": "Docker",
-        "comment": "Docker is often used to deploy WSO2 API Manager in a containerized environment."
-      },
-      {
-        "question": "What is the primary function of API analytics in WSO2 API Manager?",
-        "options": [
-          "To log API usage and performance",
-          "To enhance API security",
-          "To manage API keys",
-          "To publish APIs to the Developer Portal"
-        ],
-        "answer": "To log API usage and performance",
-        "comment": "API analytics provide insights into API usage, performance, and trends."
-      },
-      {
-        "question": "Which of the following is a best practice for securing APIs in WSO2 API Manager?",
-        "options": [
-          "Using weak passwords",
-          "Limiting the number of API subscribers",
-          "Implementing OAuth2 and access tokens",
-          "Reducing API security to enhance performance"
-        ],
-        "answer": "Implementing OAuth2 and access tokens",
-        "comment": "OAuth2 access tokens ensure that only authorized users can access the APIs."
-      },
-      {
-        "question": "In OAuth2, which grant type is best suited for machine-to-machine (M2M) communication?",
-        "options": [
-          "Authorization Code",
-          "Client Credentials",
-          "Implicit",
-          "Resource Owner Password"
-        ],
-        "answer": "Client Credentials",
-        "comment": "Client Credentials grant type is used for machine-to-machine communication where user authentication is not involved."
-      },
-      {
-        "question": "What is the role of the API Publisher in WSO2 API Manager?",
-        "options": [
-          "To manage API security",
-          "To create, manage, and publish APIs",
-          "To handle API traffic",
-          "To monitor API analytics"
-        ],
-        "answer": "To create, manage, and publish APIs",
-        "comment": "The API Publisher is responsible for the entire lifecycle of APIs."
-      },
-      {
-        "question": "How does WSO2 API Manager enforce API security using OAuth2?",
-        "options": [
-          "By encrypting payloads",
-          "By logging API requests",
-          "By validating access tokens for each request",
-          "By securing the API documentation"
-        ],
-        "answer": "By validating access tokens for each request",
-        "comment": "OAuth2 tokens are validated for each API request to ensure only authorized users can access APIs."
-      },
-      {
-        "question": "Which API Gateway policy can help prevent API overuse?",
-        "options": [
-          "Logging",
-          "Rate limiting",
-          "Caching",
-          "Debugging"
-        ],
-        "answer": "Rate limiting",
-        "comment": "Rate limiting prevents system overload by limiting the number of API requests."
-      },
-      {
-        "question": "What is a global rate limiting policy in WSO2 API Manager?",
-        "options": [
-          "It restricts the number of APIs that can be published",
-          "It applies rate limits across all APIs in the system",
-          "It manages the lifecycle of APIs",
-          "It controls API documentation"
-        ],
-        "answer": "It applies rate limits across all APIs in the system",
-        "comment": "A global rate limiting policy applies consistent limits across all APIs to ensure fair usage."
-      },
-      {
-        "question": "What is the role of API subscriptions in WSO2 API Manager?",
-        "options": [
-          "To secure the API keys",
-          "To allow consumers to access APIs",
-          "To log API usage",
-          "To handle API lifecycle management"
-        ],
-        "answer": "To allow consumers to access APIs",
-        "comment": "API subscriptions grant consumers access to APIs based on their subscription plan."
-      },
-      {
-        "question": "Which tool is NOT natively integrated with WSO2 API Manager for CI/CD?",
-        "options": [
-          "GitLab",
-          "Jenkins",
-          "Docker",
-          "API Manager"
-        ],
-        "answer": "API Manager",
-        "comment": "WSO2 API Manager does not natively handle CI/CD; external tools like Jenkins and GitLab are used."
-      },
-      {
-        "question": "Which of the following components helps store OAuth tokens in WSO2 API Manager?",
-        "options": [
-          "API Gateway",
-          "Key Manager",
-          "API Publisher",
-          "Rate Limiter"
-        ],
-        "answer": "Key Manager",
-        "comment": "The Key Manager stores and validates OAuth tokens in WSO2 API Manager."
-      },
-      {
-        "question": "Which component allows developers to discover APIs in WSO2 API Manager?",
-        "options": [
-          "API Publisher",
-          "API Gateway",
-          "Developer Portal",
-          "Key Manager"
-        ],
-        "answer": "Developer Portal",
-        "comment": "The Developer Portal allows developers to discover and subscribe to available APIs."
-      },
-      {
-        "question": "How are APIs secured in WSO2 API Manager?",
-        "options": [
-          "Using SSL certificates",
-          "By implementing OAuth2 and API keys",
-          "By storing API secrets in the API Publisher",
-          "Through API lifecycle management"
-        ],
-        "answer": "By implementing OAuth2 and API keys",
-        "comment": "WSO2 API Manager secures APIs using OAuth2 tokens, API keys, and other authentication mechanisms."
-      },
-      {
-        "question": "What is the purpose of OAuth2 in WSO2 API Manager?",
-        "options": [
-          "To manage API lifecycle",
-          "To control API analytics",
-          "To secure APIs and manage access",
-          "To monitor API performance"
-        ],
-        "answer": "To secure APIs and manage access",
-        "comment": "OAuth2 ensures secure access to APIs by validating tokens and managing API consumers."
-      },
-      {
-        "question": "Which component is responsible for enforcing rate limiting policies?",
-        "options": [
-          "Key Manager",
-          "API Gateway",
-          "API Publisher",
-          "Developer Portal"
-        ],
-        "answer": "API Gateway",
-        "comment": "The API Gateway enforces rate limiting policies to control API traffic."
-      },
-      {
-        "question": "What type of token does OAuth2 typically issue for API access?",
-        "options": [
-          "JSON Web Token (JWT)",
-          "SAML Token",
-          "Kerberos Ticket",
-          "OAuth Key"
-        ],
-        "answer": "JSON Web Token (JWT)",
-        "comment": "OAuth2 often uses JSON Web Tokens (JWT) to manage API access."
-      },
-      {
-        "question": "Which feature of WSO2 API Manager helps with API versioning?",
-        "options": [
-          "API Gateway",
-          "API Publisher",
-          "API Lifecycle Management",
-          "Key Manager"
-        ],
-        "answer": "API Lifecycle Management",
-        "comment": "API Lifecycle Management allows developers to create, manage, and version APIs over time."
-      },
-      {
-        "question": "What is the primary responsibility of the Key Manager in WSO2 API Manager?",
-        "options": [
-          "API monitoring",
-          "Managing API access tokens and security",
-          "API documentation",
-          "API versioning"
-        ],
-        "answer": "Managing API access tokens and security",
-        "comment": "The Key Manager is responsible for managing security, OAuth tokens, and API access in WSO2 API Manager."
-      },
-      {
-        "question": "Which tool can be used for monitoring the health and performance of APIs in WSO2 API Manager?",
-        "options": [
-          "Jenkins",
-          "WSO2 API Analytics",
-          "Docker",
-          "GitLab"
-        ],
-        "answer": "WSO2 API Analytics",
-        "comment": "WSO2 API Analytics provides tools to monitor the performance and health of APIs."
-      },
-      {
-        "question": "Which OAuth2 flow is typically used for mobile applications?",
-        "options": [
-          "Authorization Code",
-          "Implicit",
-          "Resource Owner Password",
-          "Client Credentials"
-        ],
-        "answer": "Authorization Code",
-        "comment": "The Authorization Code flow is best suited for mobile and web applications where user authentication is required."
-      },
-      {
-        "question": "What is the role of the API Gateway in WSO2 API Manager?",
-        "options": [
-          "To manage API keys",
-          "To route and secure API traffic",
-          "To store API documentation",
-          "To manage API analytics"
-        ],
-        "answer": "To route and secure API traffic",
-        "comment": "The API Gateway handles API traffic routing, security, and policy enforcement."
-      },
-      {
-        "question": "Which storage method is commonly used for OAuth tokens in WSO2 API Manager?",
-        "options": [
-          "Relational databases",
-          "File system",
-          "Blockchain",
-          "In-memory cache"
-        ],
-        "answer": "Relational databases",
-        "comment": "OAuth tokens in WSO2 API Manager are typically stored in relational databases."
-      },
-      {
-        "question": "Which API lifecycle phase allows developers to deprecate an API in WSO2 API Manager?",
-        "options": [
-          "Published",
-          "Deprecated",
-          "Retired",
-          "Blocked"
-        ],
-        "answer": "Deprecated",
-        "comment": "When an API is in the 'Deprecated' phase, it can still be used, but no further updates are expected."
-      },
-      {
-        "question": "Which component handles OAuth token generation in WSO2 API Manager?",
-        "options": [
-          "API Gateway",
-          "API Publisher",
-          "Key Manager",
-          "Rate Limiter"
-        ],
-        "answer": "Key Manager",
-        "comment": "The Key Manager is responsible for generating and managing OAuth tokens for API access."
-      },
-      {
-        "question": "What is the purpose of the API Store in WSO2 API Manager?",
-        "options": [
-          "To publish and manage APIs",
-          "To allow consumers to discover and subscribe to APIs",
-          "To handle API traffic",
-          "To enforce rate limiting policies"
-        ],
-        "answer": "To allow consumers to discover and subscribe to APIs",
-        "comment": "The API Store (or Developer Portal) allows API consumers to discover, subscribe, and use published APIs."
-      },
-      {
-        "question": "Which security feature is used to protect sensitive API data in transit?",
-        "options": [
-          "OAuth2 tokens",
-          "SSL/TLS encryption",
-          "API keys",
-          "Access tokens"
-        ],
-        "answer": "SSL/TLS encryption",
-        "comment": "SSL/TLS encryption ensures secure communication between clients and APIs, protecting sensitive data."
-      },
-      {
-        "question": "Which WSO2 API Manager feature allows the analysis of API traffic?",
-        "options": [
-          "API Gateway",
-          "Key Manager",
-          "API Analytics",
-          "API Publisher"
-        ],
-        "answer": "API Analytics",
-        "comment": "API Analytics provides detailed insights into API traffic, usage patterns, and performance metrics."
-      },
-      {
-        "question": "How can API quotas be enforced in WSO2 API Manager?",
-        "options": [
-          "By using API keys",
-          "Through rate limiting policies",
-          "By securing APIs with OAuth2",
-          "By versioning APIs"
-        ],
-        "answer": "Through rate limiting policies",
-        "comment": "Rate limiting policies help control the number of API requests within a specified time frame, enforcing quotas."
-      },
-      {
-        "question": "Which deployment method is commonly used to scale WSO2 API Manager?",
-        "options": [
-          "Docker Swarm",
-          "Microservices",
-          "Kubernetes",
-          "Terraform"
-        ],
-        "answer": "Kubernetes",
-        "comment": "Kubernetes is a common deployment method for scaling WSO2 API Manager in cloud-native environments."
-      },
-      {
-        "question": "Which WSO2 API Manager feature supports monitoring and alerting for APIs?",
-        "options": [
-          "API Gateway",
-          "WSO2 Analytics",
-          "Key Manager",
-          "API Publisher"
-        ],
-        "answer": "WSO2 Analytics",
-        "comment": "WSO2 Analytics supports monitoring API usage and setting up alerts for performance or security issues."
-      },
-      {
-        "question": "Which OAuth2 grant type is recommended for server-side applications?",
-        "options": [
-          "Authorization Code",
-          "Client Credentials",
-          "Implicit",
-          "Resource Owner Password"
-        ],
-        "answer": "Authorization Code",
-        "comment": "The Authorization Code grant type is recommended for server-side applications as it provides better security."
-      },
-      {
-        "question": "Which component in WSO2 API Manager helps manage API security policies?",
-        "options": [
-          "API Gateway",
-          "Key Manager",
-          "API Publisher",
-          "Developer Portal"
-        ],
-        "answer": "API Gateway",
-        "comment": "The API Gateway enforces API security policies, including rate limiting, OAuth2, and throttling."
-      },
-      {
-        "question": "What is a benefit of using API versioning in WSO2 API Manager?",
-        "options": [
-          "It simplifies API lifecycle management",
-          "It provides better API security",
-          "It improves performance",
-          "It enhances API analytics"
-        ],
-        "answer": "It simplifies API lifecycle management",
-        "comment": "API versioning simplifies the management of APIs by allowing updates without affecting existing consumers."
-      },
-      {
-        "question": "What is a common practice for deploying WSO2 API Manager in high-availability mode?",
-        "options": [
-          "Using Docker containers",
-          "Deploying a clustered environment",
-          "Scaling with Kubernetes",
-          "Implementing a multi-tenancy architecture"
-        ],
-        "answer": "Deploying a clustered environment",
-        "comment": "Deploying WSO2 API Manager in a clustered environment ensures high availability and fault tolerance."
-      },
-      {
-        "question": "Which of the following technologies can be used to deploy WSO2 API Manager on the cloud?",
-        "options": [
-          "Amazon Web Services (AWS)",
-          "Microsoft Azure",
-          "Google Cloud Platform (GCP)",
-          "All of the above"
-        ],
-        "answer": "All of the above",
-        "comment": "WSO2 API Manager can be deployed on various cloud platforms, including AWS, Azure, and GCP."
-      }
-  
+    }
   ]
 }
-
-
-
-
- 
