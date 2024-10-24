@@ -55,29 +55,46 @@
         #result {
             display: none;
         }
+        .score {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .score.correct {
+            color: green;
+        }
+        .score.incorrect {
+            color: red;
+        }
     </style>
 </head>
 <body>
 
     <div class="quiz-container">
         <div id="quiz"></div>
-        <div id="score" class="feedback">Score : 0</div> <!-- Élément pour afficher le score -->
         <button class="btn" onclick="checkAnswer()">Soumettre</button>
         <button class="btn" id="next-button" onclick="nextQuestion()">Suivant</button>
         <div id="feedback" class="feedback"></div>
         <div id="comment" class="comment"></div>
         <div id="result"></div>
+        <div class="score">
+            <div id="correctCount" class="score correct">Bonnes réponses : 0</div>
+            <div id="incorrectCount" class="score incorrect">Mauvaises réponses : 0</div>
+            <div id="totalCount" class="score">Total de questions : <span id="totalQuestions">0</span></div>
+        </div>
     </div>
 
     <script>
         let currentQuestionIndex = 0;
         let quizData = [];
         let score = 0;
+        let correctAnswers = 0;
+        let incorrectAnswers = 0;
 
         fetch('quiz.json')
             .then(response => response.json())
             .then(data => {
                 quizData = data.questions;
+                document.getElementById('totalQuestions').innerText = quizData.length;
                 displayQuestion();
             });
 
@@ -102,7 +119,6 @@
             const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
             const feedbackElement = document.getElementById('feedback');
             const commentElement = document.getElementById('comment');
-            const scoreElement = document.getElementById('score'); // Ajout de la variable pour le score
 
             if (selectedOption) {
                 const selectedAnswer = selectedOption.value;
@@ -114,19 +130,22 @@
                     feedbackElement.classList.add('correct');
                     feedbackElement.classList.remove('incorrect');
                     score++;
+                    correctAnswers++;
                     commentElement.innerText = '';
                 } else {
                     feedbackElement.innerText = "Mauvaise réponse!";
                     feedbackElement.classList.add('incorrect');
                     feedbackElement.classList.remove('correct');
+                    incorrectAnswers++;
                     commentElement.innerHTML = `<span style="color:green">Bonne réponse : ${correctAnswer}</span><br>${comment}`;
                 }
 
-                // Mise à jour de l'affichage du score
-                scoreElement.innerText = `Score : ${score}`;
+                // Update score display
+                document.getElementById('correctCount').innerText = `Bonnes réponses : ${correctAnswers}`;
+                document.getElementById('incorrectCount').innerText = `Mauvaises réponses : ${incorrectAnswers}`;
 
                 document.getElementById('next-button').style.display = 'block';
-                document.querySelector('.btn').style.display = 'none'; // Cacher le bouton soumettre
+                document.querySelector('.btn').style.display = 'none'; // Hide the submit button
             } else {
                 feedbackElement.innerText = "Veuillez choisir une option.";
                 feedbackElement.classList.remove('correct', 'incorrect');
@@ -137,7 +156,7 @@
             currentQuestionIndex++;
             if (currentQuestionIndex < quizData.length) {
                 displayQuestion();
-                document.querySelector('.btn').style.display = 'block'; // Afficher le bouton soumettre
+                document.querySelector('.btn').style.display = 'block'; // Show the submit button
             } else {
                 displayResult();
             }
