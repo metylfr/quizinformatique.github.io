@@ -61,6 +61,7 @@
 
     <div class="quiz-container">
         <div id="quiz"></div>
+        <div id="score" class="feedback">Score : 0</div> <!-- Élément pour afficher le score -->
         <button class="btn" onclick="checkAnswer()">Soumettre</button>
         <button class="btn" id="next-button" onclick="nextQuestion()">Suivant</button>
         <div id="feedback" class="feedback"></div>
@@ -101,6 +102,7 @@
             const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
             const feedbackElement = document.getElementById('feedback');
             const commentElement = document.getElementById('comment');
+            const scoreElement = document.getElementById('score'); // Ajout de la variable pour le score
 
             if (selectedOption) {
                 const selectedAnswer = selectedOption.value;
@@ -120,8 +122,11 @@
                     commentElement.innerHTML = `<span style="color:green">Bonne réponse : ${correctAnswer}</span><br>${comment}`;
                 }
 
+                // Mise à jour de l'affichage du score
+                scoreElement.innerText = `Score : ${score}`;
+
                 document.getElementById('next-button').style.display = 'block';
-                document.querySelector('.btn').style.display = 'none'; // Hide the submit button
+                document.querySelector('.btn').style.display = 'none'; // Cacher le bouton soumettre
             } else {
                 feedbackElement.innerText = "Veuillez choisir une option.";
                 feedbackElement.classList.remove('correct', 'incorrect');
@@ -132,7 +137,7 @@
             currentQuestionIndex++;
             if (currentQuestionIndex < quizData.length) {
                 displayQuestion();
-                document.querySelector('.btn').style.display = 'block'; // Show the submit button
+                document.querySelector('.btn').style.display = 'block'; // Afficher le bouton soumettre
             } else {
                 displayResult();
             }
